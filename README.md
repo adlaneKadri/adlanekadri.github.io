@@ -1,4 +1,4 @@
-# [My Resume](https://adlanekadri.github.io/)
+# [Adlane Kadri's Resume](https://adlanekadri.github.io/)
 
 ## Preview
 
