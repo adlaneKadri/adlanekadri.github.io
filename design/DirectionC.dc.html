@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: oklch(0.17 0.012 255);
+      font-family: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+      color: oklch(0.95 0.004 255);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: oklch(0.72 0.14 255); text-decoration: none; }
+    a:hover { color: oklch(0.82 0.12 255); }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  </style>
+</helmet>
+
+<div style="display: flex; min-height: 1950px; background: oklch(0.17 0.012 255)">
+
+  <!-- sidebar -->
+  <div style="width: 268px; flex-shrink: 0; background: oklch(0.135 0.012 255); border-right: 1px solid oklch(0.26 0.014 255); padding: 34px 26px; display: flex; flex-direction: column; gap: 38px">
+
+    <div>
+      <div style="width: 52px; height: 52px; border: 1px solid oklch(0.72 0.14 255); display: flex; align-items: center; justify-content: center; margin-bottom: 20px">
+        <span class="mono" style="font-size: 17px; font-weight: 500; letter-spacing: 0.06em; color: oklch(0.72 0.14 255)">AK</span>
+      </div>
+      <div style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: oklch(0.97 0.004 255); margin-bottom: 5px">Adlane Kadri</div>
+      <div class="mono" style="font-size: 11.5px; letter-spacing: 0.12em; color: oklch(0.72 0.14 255)">DATA ENGINEER</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <div style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; background: oklch(0.215 0.02 255); border-left: 2px solid oklch(0.72 0.14 255); font-size: 14px; color: oklch(0.95 0.004 255)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+        <span>Profile</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-left: 2px solid transparent; font-size: 14px; color: oklch(0.66 0.012 255)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/></svg>
+        <span>Experience</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-left: 2px solid transparent; font-size: 14px; color: oklch(0.66 0.012 255)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg>
+        <span>Education</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-left: 2px solid transparent; font-size: 14px; color: oklch(0.66 0.012 255)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m9 8-5 4 5 4"/><path d="m15 8 5 4-5 4"/></svg>
+        <span>Skills</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-left: 2px solid transparent; font-size: 14px; color: oklch(0.66 0.012 255)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <span>Projects</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-left: 2px solid transparent; font-size: 14px; color: oklch(0.66 0.012 255)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 2.5 15.3 0 18-2.5-2.7-2.5-15.3 0-18Z"/></svg>
+        <span>Languages</span>
+      </div>
+    </div>
+
+    <div style="flex-grow: 1"></div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 24px; border-top: 1px solid oklch(0.24 0.014 255)">
+      <div style="display: flex; gap: 0; border: 1px solid oklch(0.30 0.014 255)">
+        <span class="mono" style="flex-grow: 1; text-align: center; padding: 7px 0; font-size: 11.5px; letter-spacing: 0.1em; background: oklch(0.72 0.14 255); color: oklch(0.16 0.03 255); font-weight: 500">EN</span>
+        <span class="mono" style="flex-grow: 1; text-align: center; padding: 7px 0; font-size: 11.5px; letter-spacing: 0.1em; color: oklch(0.62 0.012 255)">FR</span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 0; background: oklch(0.215 0.014 255); border: 1px solid oklch(0.32 0.014 255); font-size: 13px; color: oklch(0.90 0.01 255)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+        <span>Download CV</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px; font-size: 12.5px; color: oklch(0.60 0.012 255); margin-top: 4px">
+        <span>Soisy-sous-Montmorency, FR</span>
+        <a href="#">akadri@innoscape.com</a>
+        <div style="display: flex; gap: 14px; margin-top: 3px">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main -->
+  <div style="flex-grow: 1; padding: 40px 44px 60px 44px; display: flex; flex-direction: column; gap: 22px">
+
+    <!-- summary panel -->
+    <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255)">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid oklch(0.29 0.014 255)">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.18em; color: oklch(0.64 0.012 255)">PROFILE</span>
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.12em; color: oklch(0.72 0.14 320)">7 YRS EXPERIENCE</span>
+      </div>
+      <div style="padding: 30px 24px">
+        <h1 style="margin: 0 0 18px 0; font-size: 42px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; color: oklch(0.97 0.004 255)">
+          Building the pipelines behind retail market intelligence.
+        </h1>
+        <p style="margin: 0; max-width: 820px; font-size: 16.5px; line-height: 1.65; color: oklch(0.76 0.01 255); text-wrap: pretty">
+          Data Engineer with seven years building and operating end-to-end data platforms — from
+          large-scale web scraping and automation to cloud and on-premise infrastructure,
+          databases, and modern data pipelines. Two Master's degrees in Big Data and Data
+          Mining, and a habit of owning systems end to end.
+        </p>
+      </div>
+    </div>
+
+    <!-- stat row -->
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px">
+      <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255); padding: 20px 22px">
+        <div class="mono" style="font-size: 10.5px; letter-spacing: 0.16em; color: oklch(0.60 0.012 255); margin-bottom: 12px">INFRASTRUCTURE</div>
+        <div style="font-size: 15px; font-weight: 500; color: oklch(0.95 0.004 255); line-height: 1.45">AWS EC2 · RDS · S3<br>On-premise Linux fleet</div>
+      </div>
+      <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255); padding: 20px 22px">
+        <div class="mono" style="font-size: 10.5px; letter-spacing: 0.16em; color: oklch(0.60 0.012 255); margin-bottom: 12px">DATA PLATFORM</div>
+        <div style="font-size: 15px; font-weight: 500; color: oklch(0.95 0.004 255); line-height: 1.45">Microsoft Fabric<br>Lakehouse · Notebooks</div>
+      </div>
+      <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255); padding: 20px 22px">
+        <div class="mono" style="font-size: 10.5px; letter-spacing: 0.16em; color: oklch(0.60 0.012 255); margin-bottom: 12px">COLLECTION</div>
+        <div style="font-size: 15px; font-weight: 500; color: oklch(0.95 0.004 255); line-height: 1.45">Python · Selenium<br>Puppeteer</div>
+      </div>
+      <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255); padding: 20px 22px">
+        <div class="mono" style="font-size: 10.5px; letter-spacing: 0.16em; color: oklch(0.60 0.012 255); margin-bottom: 12px">DATABASES</div>
+        <div style="font-size: 15px; font-weight: 500; color: oklch(0.95 0.004 255); line-height: 1.45">MySQL · AWS RDS<br>Schema · views · access</div>
+      </div>
+    </div>
+
+    <!-- experience panel -->
+    <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255)">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid oklch(0.29 0.014 255)">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.18em; color: oklch(0.64 0.012 255)">EXPERIENCE</span>
+      </div>
+      <div style="padding: 28px 24px">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 4px">
+          <h2 style="margin: 0; font-size: 25px; font-weight: 600; letter-spacing: -0.015em; color: oklch(0.97 0.004 255)">Data Engineer</h2>
+          <span class="mono" style="font-size: 12.5px; letter-spacing: 0.06em; color: oklch(0.72 0.14 255)">JUN 2019 — PRESENT</span>
+        </div>
+        <div style="font-size: 14.5px; color: oklch(0.68 0.012 255); margin-bottom: 24px">
+          <a href="#">Innoscape</a> &nbsp;·&nbsp; Massive open-data extraction for a RetailTech market-intelligence platform
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+          <div style="background: oklch(0.185 0.013 255); border: 1px solid oklch(0.27 0.014 255); padding: 18px 20px">
+            <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320); margin-bottom: 10px">SCRAPING AT SCALE</div>
+            <div style="font-size: 14.5px; line-height: 1.6; color: oklch(0.80 0.01 255)">Designed, built and maintained scrapers across competitor e-commerce sites in DIY &amp; home-improvement retail, in France and internationally, continuously adapting to evolving anti-bot protections.</div>
+          </div>
+          <div style="background: oklch(0.185 0.013 255); border: 1px solid oklch(0.27 0.014 255); padding: 18px 20px">
+            <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320); margin-bottom: 10px">AUTOMATION</div>
+            <div style="font-size: 14.5px; line-height: 1.6; color: oklch(0.80 0.01 255)">Built robots extracting data from partner platforms via authenticated sessions and file exports, then processing and loading it into the pipeline.</div>
+          </div>
+          <div style="background: oklch(0.185 0.013 255); border: 1px solid oklch(0.27 0.014 255); padding: 18px 20px">
+            <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320); margin-bottom: 10px">INFRASTRUCTURE OWNERSHIP</div>
+            <div style="font-size: 14.5px; line-height: 1.6; color: oklch(0.80 0.01 255)">Owned the Linux server fleet (AWS EC2 + on-premise) running scheduled collection jobs, and fully managed the RDS layer — schema, views, users, privileges, retention and backups.</div>
+          </div>
+          <div style="background: oklch(0.185 0.013 255); border: 1px solid oklch(0.27 0.014 255); padding: 18px 20px">
+            <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320); margin-bottom: 10px">FABRIC MIGRATION</div>
+            <div style="font-size: 14.5px; line-height: 1.6; color: oklch(0.80 0.01 255)">Led the migration of legacy Hadoop / Spark / Scala pipelines to Microsoft Fabric — porting jobs to notebooks, moving data from S3 into the Lakehouse, designing new pipelines from scratch.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- education panel -->
+    <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255)">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid oklch(0.29 0.014 255)">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.18em; color: oklch(0.64 0.012 255)">EDUCATION</span>
+      </div>
+      <div style="padding: 24px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+
+        <div style="background: oklch(0.185 0.013 255); border: 1px solid oklch(0.27 0.014 255); padding: 20px 22px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px">
+            <h3 style="margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: oklch(0.97 0.004 255)">Master Big Data</h3>
+            <span class="mono" style="font-size: 11.5px; color: oklch(0.72 0.14 255)">2021—2022</span>
+          </div>
+          <div style="font-size: 14px; color: oklch(0.68 0.012 255); margin-bottom: 18px">Université Paris 8 &nbsp;·&nbsp; Graduated with 16/20</div>
+          <div style="display: flex; gap: 8px">
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; background: oklch(0.26 0.05 255); border: 1px solid oklch(0.40 0.09 255); font-size: 12.5px; color: oklch(0.86 0.08 255)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h10"/></svg>
+              View program
+            </span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border: 1px solid oklch(0.30 0.014 255); font-size: 12.5px; color: oklch(0.64 0.012 255)">
+              University page
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div style="background: oklch(0.185 0.013 255); border: 1px solid oklch(0.27 0.014 255); padding: 20px 22px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px">
+            <h3 style="margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: oklch(0.97 0.004 255)">Master — Data Mining &amp; Decision Systems</h3>
+            <span class="mono" style="font-size: 11.5px; color: oklch(0.72 0.14 255)">2018—2020</span>
+          </div>
+          <div style="font-size: 14px; color: oklch(0.68 0.012 255); margin-bottom: 18px">Université Sorbonne Paris Nord &nbsp;·&nbsp; Institut Galilée</div>
+          <div style="display: flex; gap: 8px">
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; background: oklch(0.26 0.05 255); border: 1px solid oklch(0.40 0.09 255); font-size: 12.5px; color: oklch(0.86 0.08 255)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h10"/></svg>
+              View program
+            </span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border: 1px solid oklch(0.30 0.014 255); font-size: 12.5px; color: oklch(0.64 0.012 255)">
+              University page
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- skills panel -->
+    <div style="background: oklch(0.215 0.014 255); border: 1px solid oklch(0.29 0.014 255)">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; border-bottom: 1px solid oklch(0.29 0.014 255)">
+        <span class="mono" style="font-size: 11px; letter-spacing: 0.18em; color: oklch(0.64 0.012 255)">SKILLS</span>
+      </div>
+      <div style="padding: 24px; display: flex; flex-direction: column; gap: 20px">
+
+        <div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 20px; align-items: baseline">
+          <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320)">LANGUAGES</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 7px">
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Python</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">SQL</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Java</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Bash</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">PHP</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">HTML / CSS</span>
+          </div>
+        </div>
+
+        <div style="height: 1px; background: oklch(0.26 0.014 255)"></div>
+
+        <div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 20px; align-items: baseline">
+          <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320)">COLLECTION</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 7px">
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Selenium</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Puppeteer</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">requests</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">pandas</span>
+          </div>
+        </div>
+
+        <div style="height: 1px; background: oklch(0.26 0.014 255)"></div>
+
+        <div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 20px; align-items: baseline">
+          <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320)">PLATFORM &amp; INFRA</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 7px">
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Microsoft Fabric</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">AWS EC2</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">AWS RDS</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">AWS S3</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Linux</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Git</span>
+          </div>
+        </div>
+
+        <div style="height: 1px; background: oklch(0.26 0.014 255)"></div>
+
+        <div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 20px; align-items: baseline">
+          <div class="mono" style="font-size: 10.5px; letter-spacing: 0.14em; color: oklch(0.72 0.14 320)">DATABASES</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 7px">
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">MySQL</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">Oracle</span>
+            <span style="font-size: 13px; padding: 6px 12px; background: oklch(0.185 0.013 255); border: 1px solid oklch(0.28 0.014 255); color: oklch(0.88 0.008 255)">MongoDB</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
