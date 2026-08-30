@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Adlane Kadri">
+  <!-- Terminal prompt, matching the site's console motif. Drawn as paths so
+       it never depends on a font being available. -->
+  <rect width="32" height="32" rx="6" fill="#14171c"/>
+  <g fill="none" stroke="#35dd8f" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 10.5 15 16 9 21.5"/>
+    <path d="M18.5 21.5H24"/>
+  </g>
+</svg>
