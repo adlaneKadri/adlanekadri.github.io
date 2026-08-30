@@ -118,6 +118,24 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .btn-print:hover { background: oklch(0.86 0.15 155); }
 
+.printwrap { position: relative; }
+.printmenu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 70;
+  width: 268px; display: flex; flex-direction: column;
+  background: var(--bg-panel); border: 1px solid var(--border);
+  box-shadow: 0 20px 50px oklch(0.05 0.004 240 / 0.6);
+}
+.printmenu[hidden] { display: none; }
+.printmenu button {
+  display: flex; flex-direction: column; gap: 4px; text-align: left;
+  padding: 13px 16px; background: none; border: 0; cursor: pointer;
+  font-family: var(--mono); color: var(--text);
+}
+.printmenu button + button { border-top: 1px solid var(--border-soft); }
+.printmenu button:hover { background: var(--bg-inset); }
+.printmenu b { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--text-bright); }
+.printmenu span { font-size: 11.5px; line-height: 1.4; color: var(--text-mute); }
+
 /* --------------------------------------------------------------- layout -- */
 
 main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x); }
@@ -125,10 +143,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x); }
 .section { padding-top: 68px; }
 .section:last-of-type { padding-bottom: 20px; }
 
-.section__head { display: flex; align-items: center; gap: 15px; margin-bottom: 34px; }
-.section__num { font-size: 11.5px; letter-spacing: .18em; color: var(--accent); white-space: nowrap; }
-.section__title { font-family: var(--sans); font-size: 12.5px; letter-spacing: .22em; font-weight: 500; color: var(--text-mute); text-transform: uppercase; white-space: nowrap; }
-.section__rule { flex: 1 1 auto; height: 1px; background: var(--border); }
+.section__head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 34px; }
+.section__num { font-size: 14px; letter-spacing: .14em; color: var(--accent); white-space: nowrap; }
+.section__title { font-family: var(--sans); font-size: clamp(17px, 2.4vw, 21px); letter-spacing: .14em; font-weight: 700; color: var(--text); text-transform: uppercase; white-space: nowrap; }
+.section__rule { flex: 1 1 auto; height: 1px; background: var(--border); align-self: center; }
 
 /* ----------------------------------------------------------------- hero -- */
 
@@ -330,7 +348,7 @@ body.is-locked { overflow: hidden; }
     --pad-x: 0;
   }
 
-  @page { margin: 13mm 12mm; }
+  @page { size: A4; margin: 11mm 11mm; }
 
   html { scroll-behavior: auto; }
   body {
@@ -341,7 +359,7 @@ body.is-locked { overflow: hidden; }
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
 
-  .bar, .foot, .modal, .acts, .skip-link, .hero__prompt { display: none !important; }
+  .bar, .foot, .modal, .acts, .skip-link, .hero__prompt, .printmenu { display: none !important; }
 
   main { max-width: none; padding: 0; }
 
@@ -399,4 +417,64 @@ body.is-locked { overflow: hidden; }
 
   .plain li { font-size: 9.5pt; }
   .interest { font-size: 8.5pt; padding: 3px 8px; }
+
+  /* ---------------------------------------------- one-page variant -- */
+  /* Set by the "One page" menu item: keeps profile, the current role,
+     education and skills; drops the long tail. Tuned to land on one sheet. */
+
+  body.print-1page { font-size: 8pt; }
+
+  body.print-1page #projects,
+  body.print-1page #more,
+  body.print-1page .p1-hide { display: none !important; }
+
+  body.print-1page .hero { padding-bottom: 2px; }
+  body.print-1page .hero__name { font-size: 17pt; }
+  body.print-1page .hero__role { font-size: 9pt; margin-bottom: 8px; }
+  body.print-1page .hero__bio { margin-bottom: 7px; }
+  body.print-1page .hero__bio p { font-size: 8.2pt; line-height: 1.32; }
+  body.print-1page .hero__links { margin-top: 7px; font-size: 8pt; }
+  body.print-1page .spec { padding: 4px 7px; }
+  body.print-1page .spec__k { font-size: 6pt; margin-bottom: 2px; }
+  body.print-1page .spec__v { font-size: 8pt; }
+
+  body.print-1page .section { padding-top: 10px; }
+  body.print-1page .section__head { margin-bottom: 5px; }
+  body.print-1page .section__num,
+  body.print-1page .section__title { font-size: 8pt; }
+
+  body.print-1page .card { padding: 6px 8px; }
+  body.print-1page .card + .card { margin-top: 5px; }
+  body.print-1page .duo { gap: 6px; }
+  body.print-1page .card__title { font-size: 10pt; }
+  body.print-1page .card__title--sm { font-size: 9pt; }
+  body.print-1page .card__when { font-size: 8pt; }
+  body.print-1page .card__sub { font-size: 8pt; margin-bottom: 6px; }
+  body.print-1page .card__sub--tight { margin-bottom: 4px; }
+
+  body.print-1page .duties { gap: 3px; }
+  body.print-1page .duty { font-size: 7.6pt; line-height: 1.26; }
+  body.print-1page .duty__n { font-size: 7pt; }
+  body.print-1page .tags { margin-top: 5px; gap: 3px; }
+  body.print-1page .tag { font-size: 7pt; padding: 2px 5px; }
+
+  body.print-1page .note-intern { display: none; }
+  body.print-1page .entry__body { font-size: 7.5pt; line-height: 1.28; }
+
+  /* Skills goes two-up on one sheet: six stacked rows cost ~200px, three
+     rows of two cost half that, and it stays just as scannable. */
+  body.print-1page #skills .card { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+  body.print-1page .skillrow { padding: 3px 0; grid-template-columns: 104px minmax(0, 1fr); gap: 3px 8px; }
+  body.print-1page .skillrow + .skillrow { border-top: 0; }
+  body.print-1page .skillrow__k { font-size: 6pt; }
+  body.print-1page .chip { font-size: 7pt; padding: 1px 4px; }
+
+  /* Education collapses from cards to compact rows — the card chrome costs
+     more vertical space than it earns on a single sheet. */
+  body.print-1page #education .card { border: 0; padding: 2px 0; }
+  body.print-1page #education .duo { gap: 1px 20px; }
+  body.print-1page #education .card__sub { margin-bottom: 0; }
+  body.print-1page #education .card__top { margin-bottom: 1px; }
+  body.print-1page #skills .card { padding: 4px 9px; }
+  body.print-1page .section { padding-top: 6px; }
 }

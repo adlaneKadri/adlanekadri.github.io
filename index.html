@@ -47,10 +47,22 @@
         <button type="button" data-lang="fr" aria-pressed="false">fr</button>
       </div>
 
-      <button type="button" class="btn-print" id="print-cv">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
-        <span data-i18n="download">CV.PDF</span>
-      </button>
+      <div class="printwrap">
+        <button type="button" class="btn-print" id="print-cv" aria-haspopup="true" aria-expanded="false" aria-controls="print-menu">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+          <span data-i18n="download">CV.PDF</span>
+        </button>
+        <div class="printmenu" id="print-menu" hidden>
+          <button type="button" data-print="one">
+            <b data-i18n="pm_one">One page</b>
+            <span data-i18n="pm_one_d">The essentials, condensed to a single sheet</span>
+          </button>
+          <button type="button" data-print="full">
+            <b data-i18n="pm_full">Full CV</b>
+            <span data-i18n="pm_full_d">Everything, across several pages</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -164,7 +176,7 @@
       </article>
     </div>
 
-    <div class="duo" style="margin-top:16px">
+    <div class="duo p1-hide" style="margin-top:16px">
       <article class="card">
         <div class="card__top">
           <h3 class="card__title card__title--sm" data-i18n="exp2_t">Artificial Intelligence — End-of-cycle internship</h3>
@@ -277,7 +289,7 @@
 
     </div>
 
-    <div class="card" style="margin-top:16px">
+    <div class="card p1-hide" style="margin-top:16px">
       <div class="card__top">
         <h3 class="card__title card__title--sm" data-i18n="edu5_t">Scientific Baccalaureate — with honours</h3>
         <span class="card__when">2014</span>

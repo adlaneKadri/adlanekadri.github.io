@@ -20,6 +20,10 @@ var FR = {
   nav_projects: 'projets',
   nav_more: 'plus',
   download: 'CV.PDF',
+  pm_one: 'Une page',
+  pm_one_d: 'L’essentiel, condensé sur une seule feuille',
+  pm_full: 'CV complet',
+  pm_full_d: 'Tout, sur plusieurs pages',
   present: 'aujourd’hui',
   program: 'Programme',
   coursework: 'Enseignements',
@@ -354,10 +358,38 @@ document.addEventListener('keydown', function (e) {
 /* ---------------------------------------------------------------- print -- */
 
 var printBtn = document.getElementById('print-cv');
-if (printBtn) {
-  printBtn.addEventListener('click', function () {
+var printMenu = document.getElementById('print-menu');
+
+function setMenu(open) {
+  if (!printMenu || !printBtn) return;
+  printMenu.hidden = !open;
+  printBtn.setAttribute('aria-expanded', String(open));
+}
+
+if (printBtn && printMenu) {
+  printBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    setMenu(printMenu.hidden);
+  });
+
+  printMenu.addEventListener('click', function (e) {
+    var choice = e.target.closest('[data-print]');
+    if (!choice) return;
+    setMenu(false);
     openModals().forEach(closeModal);
+
+    var onePage = choice.getAttribute('data-print') === 'one';
+    document.body.classList.toggle('print-1page', onePage);
     window.print();
+    // Chrome fires afterprint; the timeout covers browsers that don't.
+    var restore = function () { document.body.classList.remove('print-1page'); };
+    window.addEventListener('afterprint', restore, { once: true });
+    setTimeout(restore, 1500);
+  });
+
+  document.addEventListener('click', function () { setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !printMenu.hidden) setMenu(false);
   });
 }
 
