@@ -71,8 +71,9 @@ var FR = {
   exp3_t: 'Développement d’applications desktop — stage',
   exp3_d: 'Développement d’une application de gestion des investissements.',
   exp4_t: 'Matériel et électronique — stage',
-  exp4_sub: 'Pendant la licence',
-  exp4_d: 'Diagnostic et réparation de tablettes — travail pratique sur la partie matérielle et électronique, en parallèle du cursus logiciel.',
+  exp4_d: 'Diagnostic et réparation de tablettes — travail pratique sur la partie matérielle et électronique, en complément d’un cursus orienté logiciel.',
+  summer2017: 'Été 2017',
+  months3: '3 mois',
 
   the_problem: 'Le problème',
   what_i_built: 'Ce que j’ai construit',
