@@ -145,7 +145,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x); }
 
 .section__head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 34px; }
 .section__num { font-size: 14px; letter-spacing: .14em; color: var(--accent); white-space: nowrap; }
-.section__title { font-family: var(--sans); font-size: clamp(17px, 2.4vw, 21px); letter-spacing: .14em; font-weight: 700; color: var(--text); text-transform: uppercase; white-space: nowrap; }
+.section__title { font-family: var(--sans); font-size: clamp(16px, 2.4vw, 21px); letter-spacing: .14em; font-weight: 700; color: var(--text); text-transform: uppercase; min-width: 0; }
 .section__rule { flex: 1 1 auto; height: 1px; background: var(--border); align-self: center; }
 
 /* ----------------------------------------------------------------- hero -- */
@@ -167,7 +167,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x); }
 .hero__bio p { font-family: var(--sans); font-size: clamp(15px, 2vw, 18px); line-height: 1.62; color: var(--text-dim); text-wrap: pretty; }
 
 .specs {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1px; background: var(--border); border: 1px solid var(--border);
 }
 .spec { background: oklch(0.155 0.010 240); padding: 18px 20px; min-width: 0; }
@@ -211,10 +211,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x); }
 
 /* ------------------------------------------------------------ two-up -- */
 
-.duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 16px; }
 .duo .card + .card { margin-top: 0; }
 /* Education has four cards — hold them to two columns so they pair evenly. */
-.duo--pair { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); align-items: start; }
+.duo--pair { grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); align-items: start; }
 
 /* --------------------------------------------------------------- buttons -- */
 
@@ -302,7 +302,7 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x); }
 .term { font-size: 10.5px; letter-spacing: .18em; color: var(--text-faint); margin: 20px 0 12px; text-transform: uppercase; }
 .term:first-child { margin-top: 0; }
 
-.courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
 .course { background: var(--bg-inset); padding: 14px 17px; min-width: 0; }
 .course__n { font-family: var(--sans); font-size: 14px; color: var(--text); line-height: 1.4; }
 .course__t { font-size: 11px; letter-spacing: .04em; color: var(--accent-soft); margin-top: 6px; }
@@ -325,6 +325,14 @@ body.is-locked { overflow: hidden; }
 @media (max-width: 900px) {
   .nav { display: none; }
 }
+@media (max-width: 640px) {
+  /* Long headings ("PROJECTS & CONTRIBUTIONS") need room to breathe on a
+     phone: let the head wrap and tighten the tracking. */
+  .section__head { flex-wrap: wrap; gap: 6px 12px; }
+  .section__title { letter-spacing: .08em; }
+  .section__rule { min-width: 20px; }
+}
+
 @media (max-width: 560px) {
   body { background-size: 48px 48px; }
   .brand__host { display: none; }
@@ -333,6 +341,22 @@ body.is-locked { overflow: hidden; }
   .btn-print { padding: 8px 10px; }
   .bar__right { gap: 10px; }
   .hero__bio { gap: 13px; }
+}
+
+/* ------------------------------------------------------------- touch -- */
+
+@media (pointer: coarse) {
+  /* Comfortable tap targets on phones and tablets. */
+  .btn, .lang button, .btn-print, .printmenu button { min-height: 44px; }
+  .btn, .btn-print { padding-block: 0; align-items: center; }
+  .modal__x { width: 44px; height: 44px; }
+  .hero__links a, .nav a { padding-block: 4px; }
+}
+
+/* No Esc key on a touch device — the hint is noise there. */
+@media (max-width: 640px) {
+  .modal__hint { display: none; }
+  .modal__foot { justify-content: flex-end; }
 }
 
 /* ----------------------------------------------------------------- print -- */
