@@ -362,8 +362,10 @@ body.is-locked { overflow: hidden; }
   .spec__k { font-size: 6.5pt; margin-bottom: 4px; }
   .spec__v { font-size: 9pt; }
 
-  .section { padding-top: 16px; break-inside: avoid-page; }
-  .section__head { margin-bottom: 12px; }
+  /* Sections may split across pages — otherwise a tall one leaves a page
+     mostly blank. Individual cards and entries still stay whole. */
+  .section { padding-top: 16px; }
+  .section__head { margin-bottom: 12px; break-after: avoid; }
   .section__num, .section__title { font-size: 8pt; }
 
   .card { border: 1px solid #e2e4e8; padding: 12px 14px; break-inside: avoid; }
